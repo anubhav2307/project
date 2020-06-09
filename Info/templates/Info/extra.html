@@ -1,0 +1,42 @@
+{% extends 'Info/base.html' %}
+{% block title %}RPT{% endblock %}
+{% block content %}
+
+    <style>
+    .div{
+  margin: 25px 50px 75px 100px;
+       }
+    </style>
+<div>
+ <div style="background-color:cornsilk" class="container-fluid">
+  <div class=" div row">
+
+       <h2 style="font-family: 'Rasa Light">Analyze Mutation</h2><br>
+         {% if album.residue_set.all %}
+           {% for x in album.residue_set.all %}
+                <div class="col-sm-6 col-md-2">
+                            <table>
+                               <center>
+                                   <tbody>
+
+                                     <tr>
+                                     <td><a href="{% url 'Info:detail' x.Mutation %}"><h3 style="text-align: left;font-family: 'Rasa Light">{{ x.Mutation}}</h3></a></td>
+                                     </tr>
+
+                                   </tbody>
+
+                                </center>
+                           </table>
+
+                </div>
+
+            {% endfor %}
+         {% else %}
+         <h3 style="font-family: 'Rasa Light">- NO DATA YET</h3>
+         {% endif %}
+
+
+  </div>
+ </div>
+</div>
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'Info/base.html' %}
+{% block title %}RESULT{% endblock %}
+{% block content %}
+<style >
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+</style>
+     {% load static %}
+            <img class="center" src="{% static "images/4079-200.png" %}" style="width: 100px" alt="x">
+     <h3 style="text-align: center">{{ album.Mutation }}</h3>
+
+          <div class="panel panel-default">
+                <div class="panel-body">
+                      <table class="table table-responsive">
+                        <thead>
+                        <tr>
+                            <th><h4>Analysis Tool</h4></th>
+                            <th><h4> Result</h4></th>
+                        </tr>
+                        </thead>
+
+                          <tbody>
+                          {% if album.result_set.all %}
+                           {% for x in album.result_set.all %}
+                          <tr>
+                              <td><h4>SDM Outcome</h4></td>
+                              <td><h4>{{ x.SDMOutcome }}</h4></td>
+                          </tr>
+                           <tr>
+                               <td><h4>STRUM Outcome</h4></td>
+                               <td><h4>{{ x.STRUMOutcome }}</h4></td>
+                           </tr>
+                           <tr>
+                               <td><h4> mCSM Outcome</h4></td>
+                               <td><h4>{{ x.mCSMOutcome }}</h4></td>
+                          </tr>
+                          <tr>
+                              <td><h4>PredictSNP prediction</h4></td>
+                              <td><h4>{{ x.PredictSNPprediction }}</h4></td>
+                          </tr>
+                          <tr>
+                              <td> <h4>MAPP prediction</h4></td>
+                              <td><h4>{{ x.MAPPprediction }}</h4></td>
+                          </tr>
+                          <tr>
+                              <td><h4>PhDSNP prediction</h4></td>
+                              <td><h4>{{ x.phDSNPprediction }}</h4></td>
+                          </tr>
+                           <tr>
+                               <td><h4>PolyPhen-1 prediction</h4></td>
+                               <td><h4>{{ x.PolyPhen1prediction }}</h4></td>
+                          </tr>
+                           <tr>
+                               <td><h4>PolyPhen-2 prediction</h4></td>
+                               <td><h4>{{ x.PolyPhen2prediction }}</h4></td>
+                          </tr>
+                           <tr>
+                               <td><h4>SIFT prediction</h4></td>
+                               <td><h4>{{ x.SIFTprediction }}</h4></td>
+                          </tr>
+                           <tr>
+                               <td> <h4>SNAP prediction</h4></td>
+                               <td><h4>{{ x.SNAPprediction }}</h4></td>
+                          </tr>
+                           <tr>
+                               <td><h4>nsSNPAnalyzer prediction</h4></td>
+                               <td><h4>{{ x.nsSNPAnalyzerprediction }}</h4></td>
+                          </tr>
+                           <tr>
+                               <td><h4>PANTHER prediction</h4></td>
+                               <td><h4>{{ x.PANTHERprediction }}</h4></td>
+                          </tr>
+                              {% endfor %}
+                              {% else %}
+                               <tr>
+                                   <td><h4></h4></td>
+                               <td><h4></h4></td>
+                               </tr>
+                              {% endif %}
+                          </tbody>
+                      </table>
+                </div>
+          </div>
+{% endblock %}

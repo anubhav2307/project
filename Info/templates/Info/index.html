@@ -1,0 +1,44 @@
+{% extends 'Info/base.html' %}
+{% block title %}Analyze{% endblock %}
+{% block content %}
+
+<style>
+  .div{
+  margin: 25px 50px 75px 100px;
+}
+</style>
+    <br><br>
+<div>
+ <div style="background-color:cornsilk" class=" div1 container-fluid">
+  <div class=" div row">
+
+       <h2 style="font-family: 'Rasa Light">Analyze Mutation</h2><br>
+         {% if object_list %}
+           {% for x in object_list %}
+                <div class="col-sm-2 col-md-1">
+                           <table>
+                               <center>
+                                   <tbody>
+
+                                     <tr>
+                                     <td><a href="{% url 'Info:delta' x.name  %}"><h3 style="text-align: left;font-family: 'Rasa Light">{{ x.name }}</h3></a></td>
+                                     </tr>
+
+                                   </tbody>
+
+                                </center>
+                           </table>
+
+
+                </div>
+
+            {% endfor %}
+         {% else %}
+         <h3 style="font-family: 'Rasa Light">NO DATA YET</h3>
+         {% endif %}
+
+
+  </div>
+ </div>
+</div>
+{% endblock %}
