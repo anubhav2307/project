@@ -17,7 +17,6 @@ class Residue(models.Model):
         return self.Mutation
 
 
-
 class result(models.Model):
      Mutation = models.ForeignKey(Residue,to_field='Mutation',on_delete=models.CASCADE)
      SDMOutcome = models.CharField(max_length=80, blank=True)
