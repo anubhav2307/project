@@ -28,51 +28,51 @@
                            {% for x in album.result_set.all %}
                           <tr>
                               <td><h4>SDM Outcome</h4></td>
-                              <td><h4>{{ x.SDMOutcome }}</h4></td>
+                              <td><h4>{{ x.SDM_Outcome }}</h4></td>
                           </tr>
                            <tr>
                                <td><h4>STRUM Outcome</h4></td>
-                               <td><h4>{{ x.STRUMOutcome }}</h4></td>
+                               <td><h4>{{ x.STRUM_Outcome }}</h4></td>
                            </tr>
                            <tr>
                                <td><h4> mCSM Outcome</h4></td>
-                               <td><h4>{{ x.mCSMOutcome }}</h4></td>
+                               <td><h4>{{ x.mCSM_Outcome }}</h4></td>
                           </tr>
                           <tr>
                               <td><h4>PredictSNP prediction</h4></td>
-                              <td><h4>{{ x.PredictSNPprediction }}</h4></td>
+                              <td><h4>{{ x.PredictSNP_prediction }}</h4></td>
                           </tr>
                           <tr>
                               <td> <h4>MAPP prediction</h4></td>
-                              <td><h4>{{ x.MAPPprediction }}</h4></td>
+                              <td><h4>{{ x.MAPP_prediction }}</h4></td>
                           </tr>
                           <tr>
                               <td><h4>PhDSNP prediction</h4></td>
-                              <td><h4>{{ x.phDSNPprediction }}</h4></td>
+                              <td><h4>{{ x.phDSNP_prediction }}</h4></td>
                           </tr>
                            <tr>
                                <td><h4>PolyPhen-1 prediction</h4></td>
-                               <td><h4>{{ x.PolyPhen1prediction }}</h4></td>
+                               <td><h4>{{ x.PolyPhen1_prediction }}</h4></td>
                           </tr>
                            <tr>
                                <td><h4>PolyPhen-2 prediction</h4></td>
-                               <td><h4>{{ x.PolyPhen2prediction }}</h4></td>
+                               <td><h4>{{ x.PolyPhen2_prediction }}</h4></td>
                           </tr>
                            <tr>
                                <td><h4>SIFT prediction</h4></td>
-                               <td><h4>{{ x.SIFTprediction }}</h4></td>
+                               <td><h4>{{ x.SIFT_prediction }}</h4></td>
                           </tr>
                            <tr>
                                <td> <h4>SNAP prediction</h4></td>
-                               <td><h4>{{ x.SNAPprediction }}</h4></td>
+                               <td><h4>{{ x.SNAP_prediction }}</h4></td>
                           </tr>
                            <tr>
                                <td><h4>nsSNPAnalyzer prediction</h4></td>
-                               <td><h4>{{ x.nsSNPAnalyzerprediction }}</h4></td>
+                               <td><h4>{{ x.nsSNPAnalyzer_prediction }}</h4></td>
                           </tr>
                            <tr>
                                <td><h4>PANTHER prediction</h4></td>
-                               <td><h4>{{ x.PANTHERprediction }}</h4></td>
+                               <td><h4>{{ x.PANTHER_prediction }}</h4></td>
                           </tr>
                               {% endfor %}
                               {% else %}

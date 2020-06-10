@@ -18,20 +18,20 @@ class Residue(models.Model):
 
 
 class result(models.Model):
-     Mutation = models.ForeignKey(Residue,to_field='Mutation',on_delete=models.CASCADE)
-     SDMOutcome = models.CharField(max_length=80, blank=True)
-     STRUMOutcome =  models.CharField(max_length=80, blank=True)
-     mCSMOutcome = models.CharField(max_length=80, blank=True)
-     PredictSNPprediction = models.CharField(max_length=80, blank=True)
-     MAPPprediction = models.CharField(max_length=80, blank=True)
-     phDSNPprediction = models.CharField(max_length=80, blank=True)
-     PolyPhen1prediction = models.CharField(max_length=80, blank=True)
-     PolyPhen2prediction = models.CharField(max_length=80, blank=True)
-     SIFTprediction = models.CharField(max_length=80, blank=True)
-     SNAPprediction = models.CharField(max_length=80, blank=True)
-     nsSNPAnalyzerprediction = models.CharField(max_length=80, blank=True)
-     PANTHERprediction = models.CharField(max_length=80, blank=True)
-     mut = models.CharField(max_length=80,blank=True)
+    Mutation = models.ForeignKey(Residue,to_field='Mutation',on_delete=models.CASCADE)
+    SDM_Outcome = models.CharField(max_length=80, blank=True)
+    STRUM_Outcome = models.CharField(max_length=80, blank=True)
+    mCSM_Outcome = models.CharField(max_length=80, blank=True)
+    PredictSNP_prediction = models.CharField(max_length=80, blank=True)
+    MAPP_prediction = models.CharField(max_length=80, blank=True)
+    phDSNP_prediction = models.CharField(max_length=80, blank=True)
+    PolyPhen1_prediction = models.CharField(max_length=80, blank=True)
+    PolyPhen2_prediction = models.CharField(max_length=80, blank=True)
+    SIFT_prediction = models.CharField(max_length=80, blank=True)
+    SNAP_prediction = models.CharField(max_length=80, blank=True)
+    nsSNPAnalyzer_prediction = models.CharField(max_length=80, blank=True)
+    PANTHER_prediction = models.CharField(max_length=80, blank=True)
+    mut = models.CharField(max_length=80,blank=True)
 
-     def __str__(self):
-         return self.mut
+    def __str__(self):
+        return self.mut
