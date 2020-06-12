@@ -41,11 +41,12 @@ class resultResource(resources.ModelResource):
     class Meta:
         model = result
         exclude = ('id',)
-        import_id_fields = ('Mutation', 'SDM_Outcome','STRUM_Outcome','mCSM_Outcome','PredictSNP_prediction','MAPP_prediction','phDSNP_prediction','PolyPhen1_prediction','PolyPhen2_prediction','SIFT_prediction','SNAP_prediction','nsSNPAnalyzer_prediction','PANTHER_prediction','mut',)
+        import_id_fields = ('Mutation', 'SDM_Outcome','STRUM_Outcome','mCSM_Outcome','PredictSNP_prediction','MAPP_prediction','phDSNP_prediction','PolyPhen1_prediction','PolyPhen2_prediction','SIFT_prediction','SNAP_prediction','nsSNPAnalyzer_prediction','PANTHER_prediction',)
 
 
 class resultAdmin(ImportExportModelAdmin):
     resource_class = resultResource
+    list_display = ('Mutation', 'SDM_Outcome')
 
 
 admin.site.register(result,resultAdmin)

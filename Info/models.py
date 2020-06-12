@@ -31,7 +31,4 @@ class result(models.Model):
     SNAP_prediction = models.CharField(max_length=80, blank=True)
     nsSNPAnalyzer_prediction = models.CharField(max_length=80, blank=True)
     PANTHER_prediction = models.CharField(max_length=80, blank=True)
-    mut = models.CharField(max_length=80,blank=True)
 
-    def __str__(self):
-        return self.mut
