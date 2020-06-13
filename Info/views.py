@@ -32,5 +32,6 @@ def delta(request,name):
 
 
 def detail(request,Mutation):
-    album = get_object_or_404(Residue, pk=Mutation)
-    return render(request,'Info/detail.html',{'album': album})
+    a=Mutation
+    x = result.objects.get(Mutation=a)
+    return render(request,'Info/detail.html',{'x':x})

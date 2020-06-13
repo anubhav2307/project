@@ -11,7 +11,7 @@
 </style>
      {% load static %}
             <img class="center" src="{% static "images/4079-200.png" %}" style="width: 100px" alt="x">
-     <h3 style="text-align: center">{{ album.Mutation }}</h3>
+     <h3 style="text-align: center">{{ x.Mutation }}</h3>
 
           <div class="panel panel-default">
                 <div class="panel-body">
@@ -24,8 +24,7 @@
                         </thead>
 
                           <tbody>
-                          {% if album.result_set.all %}
-                           {% for x in album.result_set.all %}
+                              {% if x %}
                           <tr>
                               <td><h4>SDM Outcome</h4></td>
                               <td><h4>{{ x.SDM_Outcome }}</h4></td>
@@ -74,7 +73,7 @@
                                <td><h4>PANTHER prediction</h4></td>
                                <td><h4>{{ x.PANTHER_prediction }}</h4></td>
                           </tr>
-                              {% endfor %}
+
                               {% else %}
                                <tr>
                                    <td><h4></h4></td>

@@ -18,7 +18,7 @@ class Residue(models.Model):
 
 
 class result(models.Model):
-    Mutation = models.ForeignKey(Residue,to_field='Mutation',on_delete=models.CASCADE)
+    Mutation = models.OneToOneField(Residue,to_field='Mutation',on_delete=models.CASCADE)
     SDM_Outcome = models.CharField(max_length=80, blank=True)
     STRUM_Outcome = models.CharField(max_length=80, blank=True)
     mCSM_Outcome = models.CharField(max_length=80, blank=True)
