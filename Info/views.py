@@ -33,5 +33,5 @@ def delta(request,name):
 
 def detail(request,Mutation):
     a=Mutation
-    x = result.objects.get(Mutation=a)
+    x = get_object_or_404(result, Mutation=a)
     return render(request,'Info/detail.html',{'x':x})
