@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from django.conf.urls import url, re_path
+from django.conf.urls import url
 from django.conf import settings
 from Info import views
 from django.conf.urls.static import static
@@ -23,7 +23,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^Info/', include('Info.urls')),
+    path(r'Info/', include('Info.urls')),
     path(r'', views.front, name='front'),
 ]
 
