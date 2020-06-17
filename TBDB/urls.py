@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('DatabaseAdmin/MycoTRAP/Jamia/', admin.site.urls),
     path(r'Info/', include('Info.urls')),
     path(r'', views.front, name='front'),
 ]
