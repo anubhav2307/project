@@ -1,6 +1,7 @@
 {% extends 'Info/base.html' %}
 {% block title %}RESULT{% endblock %}
 {% block content %}
+    {% load static %}
 <style >
 .center {
     display: block;
@@ -9,7 +10,7 @@
     width: 50%;
 }
 </style>
-     {% load static %}
+     <br><br>
             <img class="center" src="{% static "images/4079-200.png" %}" style="width: 100px" alt="x">
      <h3 style="text-align: center">{{ x.Mutation }}</h3>
 
