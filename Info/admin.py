@@ -30,6 +30,7 @@ class ResidueResource(resources.ModelResource):
 
 
 class ResidueAdmin(ImportExportModelAdmin):
+    search_fields=['Mutation']
     resource_class = ResidueResource
 
 
@@ -45,8 +46,12 @@ class resultResource(resources.ModelResource):
 
 
 class resultAdmin(ImportExportModelAdmin):
+    search_fields=['Mutation__Mutation']
     resource_class = resultResource
-    list_display = ('Mutation', 'SDM_Outcome')
+    list_display = ['Mutation']
 
 
 admin.site.register(result,resultAdmin)
+
+
+ 

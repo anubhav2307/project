@@ -1,88 +1,114 @@
-{% extends 'Info/base.html' %}
-{% block title %}RESULT{% endblock %}
-{% block content %}
-    {% load static %}
-<style >
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-</style>
-     <br><br>
-            <img class="center" src="{% static "images/4079-200.png" %}" style="width: 100px" alt="x">
-     <h3 style="text-align: center">{{ x.Mutation }}</h3>
 
-          <div class="panel panel-default">
-                <div class="panel-body">
-                      <table class="table table-responsive">
-                        <thead>
-                        <tr>
-                            <th><h3>Analysis Tool</h3></th>
-                            <th><h3> Result</h3></th>
-                        </tr>
-                        </thead>
-
-                          <tbody>
-                              {% if x %}
-                          <tr>
-                              <td><h4>SDM Outcome</h4></td>
-                              <td><h4>{{ x.SDM_Outcome }}</h4></td>
-                          </tr>
-                           <tr>
-                               <td><h4>STRUM Outcome</h4></td>
-                               <td><h4>{{ x.STRUM_Outcome }}</h4></td>
-                           </tr>
-                           <tr>
-                               <td><h4> mCSM Outcome</h4></td>
-                               <td><h4>{{ x.mCSM_Outcome }}</h4></td>
-                          </tr>
-                          <tr>
-                              <td><h4>PredictSNP prediction</h4></td>
-                              <td><h4>{{ x.PredictSNP_prediction }}</h4></td>
-                          </tr>
-                          <tr>
-                              <td> <h4>MAPP prediction</h4></td>
-                              <td><h4>{{ x.MAPP_prediction }}</h4></td>
-                          </tr>
-                          <tr>
-                              <td><h4>PhDSNP prediction</h4></td>
-                              <td><h4>{{ x.phDSNP_prediction }}</h4></td>
-                          </tr>
-                           <tr>
-                               <td><h4>PolyPhen-1 prediction</h4></td>
-                               <td><h4>{{ x.PolyPhen1_prediction }}</h4></td>
-                          </tr>
-                           <tr>
-                               <td><h4>PolyPhen-2 prediction</h4></td>
-                               <td><h4>{{ x.PolyPhen2_prediction }}</h4></td>
-                          </tr>
-                           <tr>
-                               <td><h4>SIFT prediction</h4></td>
-                               <td><h4>{{ x.SIFT_prediction }}</h4></td>
-                          </tr>
-                           <tr>
-                               <td> <h4>SNAP prediction</h4></td>
-                               <td><h4>{{ x.SNAP_prediction }}</h4></td>
-                          </tr>
-                           <tr>
-                               <td><h4>nsSNPAnalyzer prediction</h4></td>
-                               <td><h4>{{ x.nsSNPAnalyzer_prediction }}</h4></td>
-                          </tr>
-                           <tr>
-                               <td><h4>PANTHER prediction</h4></td>
-                               <td><h4>{{ x.PANTHER_prediction }}</h4></td>
-                          </tr>
-
-                              {% else %}
+    {% extends 'Info/base.html' %}
+    {% block title %}RESULT{% endblock %}
+    {% block content %}
+    <style >
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 10%;
+    }
+    </style>
+         {% load static %}
+                <img class="center" src="{% static "images/result.png" %}" alt="x">
+         <h3 style="text-align: center">{{ x.Mutation }}</h3>
+         <h3><b>SEQUENCE</b></h3>
+              <div class="panel panel-default">
+                    <div class="panel-body"  style="background-color:cornsilk;">
+                          <table class="table table-responsive">
+                             
+                            <thead>
+                            <tr>
+                                <th><h3>Analysis Tool</h3></th>
+                                <th><h3> Result</h3></th>
+                            </tr>
+                            </thead>
+                            {% if x %}
+                              <tbody>
+                              <tr>
+                                  <td><h4>PredictSNP prediction</h4></td>
+                                  <td><h4>{{ x.PredictSNP_prediction }}</h4></td>
+                              </tr>
+                              <tr>
+                                  <td> <h4>MAPP prediction</h4></td>
+                                  <td><h4 >{{ x.MAPP_prediction }}</h4></td>
+                              </tr>
+                              <tr>
+                                  <td><h4>PhDSNP prediction</h4></td>
+                                  <td><h4>{{ x.phDSNP_prediction }}</h4></td>
+                              </tr>
                                <tr>
-                                   <td><h4></h4></td>
-                               <td><h4></h4></td>
+                                   <td><h4>PolyPhen-1 prediction</h4></td>
+                                   <td><h4>{{ x.PolyPhen1_prediction }}</h4></td>
+                              </tr>
+                               <tr>
+                                   <td><h4>PolyPhen-2 prediction</h4></td>
+                                   <td><h4>{{ x.PolyPhen2_prediction }}</h4></td>
+                              </tr>
+                               <tr>
+                                   <td><h4>SIFT prediction</h4></td>
+                                   <td><h4>{{ x.SIFT_prediction }}</h4></td>
+                              </tr>
+                               <tr>
+                                   <td> <h4>SNAP prediction</h4></td>
+                                   <td><h4>{{ x.SNAP_prediction }}</h4></td>
+                              </tr>
+                               <tr>
+                                   <td><h4>nsSNPAnalyzer prediction</h4></td>
+                                   <td><h4>{{ x.nsSNPAnalyzer_prediction }}</h4></td>
+                              </tr>
+                               <tr>
+                                   <td><h4>PANTHER prediction</h4></td>
+                                   <td><h4>{{ x.PANTHER_prediction }}</h4></td>
+                              </tr>
+                            </tbody>
+                            {% else %}
+                            <tr>
+                                <td><h4></h4></td>
+                            <td><h4></h4></td>
+                            </tr>
+                           {% endif %}
+                              
+                          </table>
+                        </div>
+                    </div>
+                    <h3><b>STRUCTURE</b></h3>
+                    <div class="panel panel-default">
+                        <div class="panel-body"  style="background-color:cornsilk;">
+                        
+                          <table class="table table-responsive">
+                             
+                            <thead>
+                            <tr>
+                                <th><h3>Analysis Tool</h3></th>
+                                <th><h3 style="text-align: center;">Result</h3></th>
+                            </tr>
+                            </thead>
+                            {% if x %}
+                              <tbody>
+                              <tr>
+                    
+                                  <td><h4>SDM Outcome</h4></td>
+                                  <td><h4 style="text-align: center;">{{ x.SDM_Outcome }}</h4></td>
+                              </tr>
+                               <tr>
+                                   <td><h4>STRUM Outcome</h4></td>
+                                   <td><h4 style="text-align: center;">{{ x.STRUM_Outcome }}</h4></td>
                                </tr>
-                              {% endif %}
-                          </tbody>
-                      </table>
-                </div>
-          </div>
-{% endblock %}
+                               <tr>
+                                   <td><h4> mCSM Outcome</h4></td>
+                                   <td><h4 style="text-align: center;">{{ x.mCSM_Outcome }}</h4></td>
+                              </tr>
+                            </tbody>
+                            {% else %}
+                            <tr>
+                                <td><h4></h4></td>
+                            <td><h4></h4></td>
+                            </tr>
+                           {% endif %}
+
+                        </div>
+              </div>
+              
+    {% endblock %}

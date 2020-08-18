@@ -1,32 +1,44 @@
 {% extends 'Info/base.html' %}
-{% block title %}Home{% endblock %}
+{% block title %}Analyze{% endblock %}
+{% load static %}
 {% block content %}
-    {% load static %}
-    <br><br>
-        <style>
-      
-       .center {
-        display: block;
-        margin-left:auto;
-        margin-right:auto;
-        }
-
-    </style>
-    <img class="center" src="{% static "images/dna(5).svg" %}" width=180px" alt=".">
-    <br><br><br><br>
-    <div  style="background-color: cornsilk" class="div1 container-fluid">
-
-
-        <p style="font-family: 'Rasa Light'"><h4 style="line-height: 1.8;">MycoTRAP-DB is an online database that harbours almost all the mutations present in six putative first and second line drug resistance associated genes (rpoB, inhA, katG, pncA, gyrA and gyrB). Other than just assembling the mutations, it also provides information about implications of these mutations on the structures and functions of proteins coded by these genes. The database can be used for searching, retrieving, analysing and downloading the data of mutations present in drug resistant MTB clinical isolates. MycoTRAP-DB presents information about mutations which have been studied for diagnosis of  drug resistance in TB however there are other mutations identified to be pathogenic by various sequence and structure based tools used in the present study.These pathogenic mutations decipher their possible roles and accountability for causing drug resistance and develop more efficient genotypic methods for diagnosis and detection of drug resistant TB.</h4></p>
-
-
-
+<div class="w3-content w3-section" style="max-width:500px">
+  
+    
+    <img class="mySlides" src="{% static 'images/11_rpoB_rif.png' %}"  width="60.5%">
+    <img class="mySlides" src="{% static  'images/2_rpoB_rif.png' %}"  width="54%">
     </div>
-    <br><br><br><br><br><br><br>
+    
+    <script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 5000); // Change image every 5 seconds
+    }
+    </script>
+    
+   <br><br>
+    <div  style="background-color: cornsilk" class="container-fluid">
+
+
+      <p style="font-family: 'Rasa Light'"><h4 style="line-height: 1.8;text-align: justify; text-justify: inter-word;">MycoTRAP-DB is an online database that harbours almost all the mutations present in six putative first and second line drug resistance associated genes (rpoB, inhA, katG, pncA, gyrA and gyrB). Other than just assembling the mutations, it also provides information about implications of these mutations on the structures and functions of proteins coded by these genes. The database can be used for searching, retrieving, analysing and downloading the data of mutations present in drug resistant MTB clinical isolates. MycoTRAP-DB presents information about mutations which have been studied for diagnosis of  drug resistance in TB however there are other mutations identified to be pathogenic by various sequence and structure based tools used in the present study.These pathogenic mutations decipher their possible roles and accountability for causing drug resistance and develop more efficient genotypic methods for diagnosis and detection of drug resistant TB.</h4></p>
+    
+    
+    
+    </div><br><br>
     <div class="container">
 
-   <footer class="footer">
-    Icon made by Eucalyp from www.flaticon.com
-   </footer>
-    </div>
+      <footer class="footer">
+      Icon made by Eucalyp from www.flaticon.com
+      </footer>
+      </div>
 {% endblock %}
