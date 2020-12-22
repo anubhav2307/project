@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render,get_object_or_404
 from django.http import Http404
@@ -6,6 +7,7 @@ from django.views import generic
 from .models import Genome,Residue,result,files
 from django.db.models import Q
 from django.http import FileResponse
+
 
 
 def front(request):
@@ -41,7 +43,7 @@ def sheet(request,id):
 
     m = get_object_or_404(files,pk =id) 
 
-    filenam='/home/anubhav/Work/media/' +  str(m.fil)
+    filenam = settings.MEDIA_ROOT + str(m.fil)
 
     try:
         return FileResponse(open(filenam, 'rb'), content_type='application/vnd.ms-excel')
