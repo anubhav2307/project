@@ -3,8 +3,9 @@ from django.http import HttpResponse
 from django.shortcuts import render,get_object_or_404
 from django.http import Http404
 from django.views import generic
-from .models import Genome,Residue,result
+from .models import Genome,Residue,result,files
 from django.db.models import Q
+from django.http import FileResponse
 
 
 def front(request):
@@ -35,3 +36,27 @@ def detail(request,Mutation):
     a=Mutation
     x = get_object_or_404(result, Mutation=a)
     return render(request,'Info/detail.html',{'x':x})
+
+def sheet(request,id):
+
+    m = get_object_or_404(files,pk =id) 
+
+    filenam='/home/anubhav/Work/media/' +  str(m.fil)
+
+    try:
+        return FileResponse(open(filenam, 'rb'), content_type='application/vnd.ms-excel')
+    except FileNotFoundError:
+        raise Http404()
+
+
+def downl(request):
+
+    f = files.objects.all()
+
+    print (f)
+
+    return render(request,'Info/downloadpg.html',{'f':f})
+
+
+
+ 

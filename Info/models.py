@@ -32,3 +32,6 @@ class result(models.Model):
     nsSNPAnalyzer_prediction = models.CharField(max_length=80, blank=True)
     PANTHER_prediction = models.CharField(max_length=80, blank=True)
 
+class files(models.Model):
+    name=models.CharField(max_length=300)
+    fil = models.FileField(upload_to='fls/')

@@ -12,5 +12,7 @@ urlpatterns = [
  path(r'details/<Mutation>/',views.detail,name='detail'),
  path(r'help/', views.hlp, name='hlp'),
  path(r'contacts/', views.contk, name='contk'),
+ path('file/<id>',views.sheet,name='sheet'),
+ path('download/',views.downl,name='downl')
 
 ]
