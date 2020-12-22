@@ -43,7 +43,8 @@ def sheet(request,id):
 
     m = get_object_or_404(files,pk =id) 
 
-    filenam = settings.MEDIA_ROOT + str(m.fil)
+    filenam = settings.MEDIA_ROOT + '/'+ str(m.fil)
+    print (filenam)
 
     try:
         return FileResponse(open(filenam, 'rb'), content_type='application/vnd.ms-excel')
