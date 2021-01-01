@@ -1,10 +1,11 @@
 from __future__ import unicode_literals
 from django.conf import settings
 from django.http import HttpResponse
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from django.http import Http404
 from django.views import generic
-from .models import Genome,Residue,result,files
+from .models import Genome,Residue,result,files,user_uploads
+from .forms import user_form
 from django.db.models import Q
 from django.http import FileResponse
 
@@ -60,6 +61,23 @@ def downl(request):
 
     return render(request,'Info/downloadpg.html',{'f':f})
 
-
-
+IMAGE_FILE_TYPES = ['xlsx']
+def upload(request):
+    x = user_uploads.objects.all()
+    form = user_form()
+    if request.method == 'POST':
+        form = user_form(request.POST, request.FILES)
+        if form.is_valid():
+            user_pr = form.save(commit=False)
+            user_pr.file = request.FILES['file']
+            file_type = user_pr.file.url.split('.')[-1]
+            file_type = file_type.lower()
+            if file_type not in IMAGE_FILE_TYPES:
+                return redirect('Info:upload')
+            user_pr.save()
+            x = user_uploads.objects.all()
+            print (x)
+            return render(request,'Info/success.html',{'x':x})
+    context = {"form":form,"x":x}
+    return render(request, 'Info/uploadpg.html', context)    
  

@@ -13,6 +13,7 @@ urlpatterns = [
  path(r'help/', views.hlp, name='hlp'),
  path(r'contacts/', views.contk, name='contk'),
  path('file/<id>',views.sheet,name='sheet'),
- path('download/',views.downl,name='downl')
+ path('download/',views.downl,name='downl'),
+ path('upload/',views.upload,name='upload')
 
 ]

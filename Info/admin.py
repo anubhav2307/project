@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 from django.contrib import admin
 from import_export import resources, fields
 from import_export.widgets import ForeignKeyWidget
-from .models import Genome,Residue,result,files
+from .models import Genome,Residue,result,files,user_uploads
 from import_export.admin import ImportExportActionModelAdmin, ImportExportModelAdmin
 
 
@@ -53,6 +53,7 @@ class resultAdmin(ImportExportModelAdmin):
 
 admin.site.register(result,resultAdmin)
 admin.site.register(files)
+admin.site.register(user_uploads)
 
 
  

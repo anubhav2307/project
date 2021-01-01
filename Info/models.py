@@ -35,3 +35,6 @@ class result(models.Model):
 class files(models.Model):
     name=models.CharField(max_length=300)
     fil = models.FileField(upload_to='fls/')
+
+class user_uploads(models.Model):
+    file = models.FileField(upload_to='users/')    

@@ -22,8 +22,8 @@
     </div>
    <style>
     .navbar-nav > li{
-   padding-left:20px;
-   padding-right:30px;
+   padding-left:15px;
+   padding-right:15px;
    }
        .footer {
   text-align: center;
@@ -51,18 +51,21 @@ margin-right: auto;}
             <ul class="nav navbar-nav">
 
             <li><a href="{% url 'front' %}">
-            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home</h4></a></li>
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home</h4></a></li>
 
-            <li><a href="{% url 'Info:IndexView' %}"><h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
+            <li><a href="{% url 'Info:IndexView' %}"><h4>&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>&nbsp;
             Analyze</h4></a></li>
 
             <li><a href="{% url 'Info:hlp' %}">
-            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>&nbsp;Tools</h4></a></li>
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>&nbsp;Tools</h4></a></li>
 
 
-            <li><a href="{% url 'Info:contk' %}"><h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>&nbsp;Contact</h4></a></li>
-            <li><a href="{% url 'Info:downl' %}"><h4><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp;Download</h4></a></li>
-            </ul>
+            <li><a href="{% url 'Info:contk' %}"><h4>&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>&nbsp;Contact</h4></a></li>
+            <li><a href="{% url 'Info:downl' %}"><h4>&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp;Download</h4></a></li>
+            
+            <li><a href="{% url 'Info:upload' %}">
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-open" aria-hidden="true"></span>&nbsp;Upload</h4>
+              </a></li></ul>
           </div>
       </div>
       </nav>

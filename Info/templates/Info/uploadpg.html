@@ -1,0 +1,53 @@
+{% extends 'Info/base.html' %}
+{% block title %}UPLOAD{% endblock %}
+{% block content %}
+
+        <div class="panel panel-default">
+            <div class="panel-body" style="background-color:cornsilk;">
+                
+                <table class="table table-responsive">
+                    <h3>Upload your mutation data in the format described below :</h3><br>
+
+                    <tr>
+                        <th>Gene*</th>
+                        <th>Drug*</th>
+                        <th>Position*</th>
+                        <th>Wild type amino acid*</th>
+                        <th>Mutant amino acid*</th>
+                        <th>Reference</th>
+
+                    </tr>
+                    <tr>
+                        <td>rpoB</td>
+                        <td>Rifampicin</td>
+                        <td>176</td>
+                        <td>Val</td>
+                        <td>Ala</td>
+                        <td>31686870</td>
+                    </tr>
+                    <tr>
+                        <td>katG</td>
+                        <td>Isoniazid</td>
+                        <td>104</td>
+                        <td>Arg</td>
+                        <td>Lys</td>
+                        <td>26104204</td>
+                    </tr>
+                </table>
+                <h5>Note : Fields marked with * have to be present in your file (.xlsx format)</h5>
+                <center>
+                
+                    <form method="POST" enctype="multipart/form-data">
+                        <!-- Very Important csrf Token -->
+                        {% csrf_token %}
+                        <table>
+                            {{ form.as_table }}
+                        </table>
+                        <input type="submit" class="btn btn-primary">
+                    </form>
+                
+                </center>
+            </div>
+        </div>
+ 
+{% endblock %}
