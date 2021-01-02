@@ -1,11 +1,13 @@
 {% extends 'Info/base.html' %}
 {% block title %}UPLOAD{% endblock %}
 {% block content %}
-
+        
         <div class="panel panel-default">
+           
             <div class="panel-body" style="background-color:cornsilk;">
                 
                 <table class="table table-responsive">
+                    <div class="container-fluid">
                     <h3>Upload your mutation data in the format described below :</h3><br>
 
                     <tr>
@@ -33,6 +35,7 @@
                         <td>Lys</td>
                         <td>26104204</td>
                     </tr>
+                </div>
                 </table>
                 <h5>Note : Fields marked with * have to be present in your file (.xlsx format)</h5>
                 <center>
@@ -47,7 +50,7 @@
                     </form>
                 
                 </center>
+                <a href="{% url "Info:see_uploads" %}"><b>View Uploads</b></a>
             </div>
         </div>
- 
 {% endblock %}

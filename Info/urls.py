@@ -14,6 +14,8 @@ urlpatterns = [
  path(r'contacts/', views.contk, name='contk'),
  path('file/<id>',views.sheet,name='sheet'),
  path('download/',views.downl,name='downl'),
- path('upload/',views.upload,name='upload')
+ path('upload/',views.upload,name='upload'),
+ path('see_uploads/',views.see_uploads,name='see_uploads'),
+ path('upload_file/<id>',views.upload_file,name="upload_file")
 
 ]

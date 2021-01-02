@@ -81,3 +81,23 @@ def upload(request):
     context = {"form":form,"x":x}
     return render(request, 'Info/uploadpg.html', context)    
  
+
+def see_uploads(request):
+    upl = user_uploads.objects.all()
+    print (upl)
+
+    return render(request,'Info/view_uploads.html',{"upl":upl})
+
+
+def upload_file(request,id):
+    k = get_object_or_404(user_uploads,pk =id) 
+
+    filename = settings.MEDIA_ROOT + '/'+ str(k.file)
+    print (filename)
+
+    try:
+        return FileResponse(open(filename, 'rb'), content_type='application/vnd.ms-excel')
+    except FileNotFoundError:
+        raise Http404()
+
+
