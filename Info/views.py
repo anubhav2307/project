@@ -22,12 +22,9 @@ def hlp(request):
 def contk(request):
     return render(request, 'Info/contacts.html')
 
-
-class IndexView(generic.ListView):
-    template_name = 'Info/index.html'
-
-    def get_queryset(self):
-        return Genome.objects.all()
+def Index(request):
+    obj=Genome.objects.all()
+    return render(request,'Info/index.html',{'obj':obj})
 
 
 def delta(request,name):

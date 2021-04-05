@@ -7,7 +7,7 @@ app_name = 'Info'
 
 urlpatterns = [
 
- path(r'Analyze/', views.IndexView.as_view(), name='IndexView'),
+ path(r'Analyze/', views.Index, name='Index'),
  path(r'Mutation/<name>/', views.delta , name = 'delta'),
  path(r'details/<Mutation>/',views.detail,name='detail'),
  path(r'help/', views.hlp, name='hlp'),
