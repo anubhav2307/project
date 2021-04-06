@@ -1,0 +1,29 @@
+{% extends 'Info/base.html' %}
+{% block title %}DOWNLOAD{% endblock %}
+{% block content %}
+
+<div class="panel panel-default">
+    <div class="panel-body" style="background-color:cornsilk;">
+        <table class="table table-responsive">
+            {% if data %}
+
+            {% for x in data %}
+               
+                <a href="{% url 'Info:detail' x.Mutation %}">
+                    <h3 style="text-align: left;font-family: 'Rasa Light">{{ x.Mutation}}</h3>
+                </a>
+                <br>
+
+            {% endfor %}
+
+
+            {% else %}
+               <h3>No Mutation Found </h3>
+
+            {% endif %}
+        </table>
+
+    </div>
+</div>
+
+{% endblock %}

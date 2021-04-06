@@ -7,9 +7,17 @@
   margin: 25px 50px 75px 100px;
 }
 </style>
-    <br><br>
+    <br>
 <div>
  <div style="background-color:cornsilk" class=" div1 container-fluid">
+  <div class=" div row">
+    <form action='/Info/Analyze/' method="post" style="text-align: center;">
+      {% csrf_token %}
+      {{ form }}
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
   <div class=" div row">
 
        <h2 style="font-family: 'Rasa Light">Analyze Mutation</h2><br>

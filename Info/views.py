@@ -5,7 +5,7 @@ from django.shortcuts import render,get_object_or_404,redirect
 from django.http import Http404
 from django.views import generic
 from .models import Genome,Residue,result,files,user_uploads
-from .forms import user_form
+from .forms import user_form,SearchForm
 from django.db.models import Q
 from django.http import FileResponse
 
@@ -23,8 +23,16 @@ def contk(request):
     return render(request, 'Info/contacts.html')
 
 def Index(request):
+    form = SearchForm()
     obj=Genome.objects.all()
-    return render(request,'Info/index.html',{'obj':obj})
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            items = form.cleaned_data['name']
+            data = Residue.objects.filter(Mutation__icontains=items)
+            print(data)
+            return render(request,'Info/search_results.html',{'data':data})
+    return render(request,'Info/index.html',{'obj':obj,'form':form})
 
 
 def delta(request,name):

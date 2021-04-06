@@ -8,3 +8,7 @@ class user_form(forms.ModelForm):
         fields = [
         'file'
         ]
+
+
+class SearchForm(forms.Form):
+    name = forms.CharField(label='search mutation', max_length=15)
