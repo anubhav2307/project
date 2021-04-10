@@ -1,0 +1,37 @@
+{% extends 'Info/base.html' %}
+{% block title %}Success{% endblock %}
+{% block content %}
+
+<div class="panel panel-default">
+  <div class="panel-body" style="background-color:cornsilk;">
+    <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th>Table Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+      
+        {% for x in data %}
+        <tbody>
+          <td>
+            <h4><a href="{% url 'Info:adminfilesbycategory' x.name %}">{{x.name}}</a></h4>
+          </td>
+          <td>
+            <h4>{{x.description}}</h4>
+          </td>
+        </tbody>
+           
+        
+        {% endfor %}
+      
+
+    </table>
+
+  </div>
+
+</div>
+
+
+
+{% endblock %}

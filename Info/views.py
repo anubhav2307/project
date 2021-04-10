@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render,get_object_or_404,redirect
 from django.http import Http404
 from django.views import generic
-from .models import Genome,Residue,result,files,user_uploads
+from .models import Genome,Residue,result,files,user_uploads,admin_files
 from .forms import user_form,SearchForm
 from django.db.models import Q
 from django.http import FileResponse
@@ -58,14 +58,6 @@ def sheet(request,id):
         raise Http404()
 
 
-def downl(request):
-
-    f = files.objects.all()
-
-    print (f)
-
-    return render(request,'Info/downloadpg.html',{'f':f})
-
 IMAGE_FILE_TYPES = ['xlsx']
 def upload(request):
     x = user_uploads.objects.all()
@@ -106,3 +98,10 @@ def upload_file(request,id):
         raise Http404()
 
 
+def getdownloads(request):
+    l = admin_files.objects.all()
+    return render(request,'Info/download_section.html',{'data':l})
+
+def adminfilesbycategory(request,name):
+    data=get_object_or_404(admin_files,pk=name)
+    return render(request,'Info/grouped_admin_files.html',{'data':data})

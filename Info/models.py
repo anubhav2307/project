@@ -32,9 +32,21 @@ class result(models.Model):
     nsSNPAnalyzer_prediction = models.CharField(max_length=80, blank=True)
     PANTHER_prediction = models.CharField(max_length=80, blank=True)
 
+
+class admin_files(models.Model):
+    name=models.CharField(primary_key=True,max_length=50)
+    description=models.TextField()
+
+    def __str__(self):
+        return self.name
+
+        
 class files(models.Model):
+    category =models.ForeignKey(admin_files,to_field='name',on_delete=models.CASCADE,null=True)
     name=models.CharField(max_length=300)
     fil = models.FileField(upload_to='fls/')
 
 class user_uploads(models.Model):
     file = models.FileField(upload_to='users/')    
+
+

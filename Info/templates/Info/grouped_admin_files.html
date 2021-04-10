@@ -1,0 +1,34 @@
+{% extends 'Info/base.html' %}
+{% block title %}Success{% endblock %}
+{% block content %}
+
+<div class="panel panel-default">
+    <div class="panel-body" style="background-color:cornsilk;">
+        <table class="table table-responsive">
+
+            {% if data.files_set.all %}
+                
+                    {% for x in data.files_set.all %}
+               
+                    <tbody>
+                        
+                        <tr>
+                            <td><h4>{{x.name}}</h4></td>
+                            <td><h4><a href="{% url 'Info:sheet' x.id %}">Download</a></h4></td>
+                        </tr>
+                    
+                    </tbody>
+                    {% endfor %}
+                
+            {% endif %}
+
+
+        </table>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}
