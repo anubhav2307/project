@@ -11,4 +11,4 @@ class user_form(forms.ModelForm):
 
 
 class SearchForm(forms.Form):
-    name = forms.CharField(label='search mutation', max_length=15)
+    name = forms.CharField(label='Search Mutation', max_length=15)
